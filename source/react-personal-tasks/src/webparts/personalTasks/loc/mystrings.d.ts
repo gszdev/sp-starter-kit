@@ -12,6 +12,7 @@ declare interface IPersonalTasksWebPartStrings {
   TargetBucketId: string;
   WebPartTitlePlaceholder: string;
   WebPartTitleLabel: string;
+  HideCompletedTasksPropertyLabel: string;
 }
 
 declare module 'PersonalTasksWebPartStrings' {

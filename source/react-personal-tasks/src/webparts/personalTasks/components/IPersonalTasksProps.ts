@@ -49,4 +49,8 @@ export interface IPersonalTasksProps {
    * Page's section theme
    */
   themeVariant: IReadonlyTheme | undefined;
+  /**
+   * Hide completed tasks
+   */
+  hideCompletedTasks: boolean;
 }

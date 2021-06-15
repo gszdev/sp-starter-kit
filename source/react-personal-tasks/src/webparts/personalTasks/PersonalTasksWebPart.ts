@@ -57,6 +57,10 @@ export interface IPersonalTasksWebPartProps {
    * A string ID to lock the tasks interface to the provided bucket ID (Planner Data-Source Only).
    */
   targetBucketId: string;
+  /**
+   * Hide completed tasks
+   */
+  hideCompletedTasks: boolean;
 }
 
 export default class PersonalTasksWebPart extends BaseClientSideWebPart<IPersonalTasksWebPartProps> {
@@ -132,6 +136,9 @@ export default class PersonalTasksWebPart extends BaseClientSideWebPart<IPersona
                 PropertyPaneCheckbox('hideHeader', {
                   text: strings.HideHeaderPropertyLabel
                 }),
+                PropertyPaneCheckbox('hideCompletedTasks', {
+                  text: strings.HideCompletedTasksPropertyLabel
+                }),
                 PropertyPaneHorizontalRule(),
                 PropertyPaneTextField('initialId', {
                   label: strings.InitialId
@@ -146,7 +153,7 @@ export default class PersonalTasksWebPart extends BaseClientSideWebPart<IPersona
                 PropertyPaneTextField('targetBucketId', {
                   label: strings.TargetBucketId,
                   disabled: this.properties.dataSource === TasksSource.todo
-                }),
+                })
               ]
             }
           ]

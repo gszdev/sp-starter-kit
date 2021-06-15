@@ -42,7 +42,8 @@ export class PersonalTasks extends React.Component<IPersonalTasksProps, {}> {
       initialBucketId,
       targetId,
       targetBucketId,
-      themeVariant
+      themeVariant,
+      hideCompletedTasks,
     } = this.props;
 
     //
@@ -75,7 +76,27 @@ export class PersonalTasks extends React.Component<IPersonalTasksProps, {}> {
           targetId={targetId}
           targetBucketId={targetBucketId}
           readOnly={!allowEditing}
-          hideHeader={hideHeader} />
+          hideHeader={hideHeader}
+          taskFilter={(task) => {
+            var showTaskResult = true;
+            if (hideCompletedTasks) {
+              // Only works for Planner tasks
+              /*
+              if (task.percentComplete) {
+                if (task.percentComplete === 100) {
+                  showTaskResult = false;
+                }
+              }
+              */
+              // Wrks for Planner and To Do tasks
+              if(task.completedDateTime) {
+                showTaskResult = false;
+              }
+            }
+
+            return showTaskResult;
+          }}
+          />
       </div>
     );
   }

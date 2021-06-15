@@ -26,7 +26,8 @@
       "webPartTitle": "My Tasks",
       "allowEditing": false,
       "dataSource": "planner",
-      "hideHeader": true
+      "hideHeader": true,
+      "hideCompletedTasks": false
     }
   }]
 }

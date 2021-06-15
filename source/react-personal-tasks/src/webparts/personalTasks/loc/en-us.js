@@ -12,6 +12,7 @@ define([], function () {
     "TargetId": "Source Plan or To Do Folder id",
     "TargetBucketId": "Source bucket id",
     "WebPartTitlePlaceholder": "Web part title",
-    "WebPartTitleLabel": "Add a title"
+    "WebPartTitleLabel": "Add a title",
+    "HideCompletedTasksPropertyLabel": "Hide completed tasks"
   }
 });
